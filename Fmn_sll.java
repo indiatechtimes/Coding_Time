@@ -37,16 +37,19 @@ public class fmn_sll {
             }
             
         }
-        else(
-            int l1=(l/2)+1;
-            ListNode current =head;
-            while (current!=null) {
+        else{
+             int l1=(l/2)+1;
+             ListNode current =head;
+             while (current!=null) {
                 if (current==l1) {
                     System.out.println(current.data);
                 }
             }
-        )
+        }
+        
     }
+    
+    
 
     public static void main(String args[]){
         fmn_sll s=new fmn_sll();
