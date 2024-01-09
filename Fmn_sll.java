@@ -1,4 +1,4 @@
-public class fmn_sll {
+class fmn_sll {
     private ListNode head;
     private static class ListNode{
         private int data;
@@ -20,33 +20,51 @@ public class fmn_sll {
         head=newNode;
     }
 
+
     public void middle(){
         ListNode current=head;
         int l=0;
         while (current!=null) {
-            l=l++;
+            System.out.print(current.data+"-->");
+            l++;
+
+            current=current.next;
             
         }
+        
+
+        System.out.println(" ");
+        System.out.println(l);
 
 
         if (l%2==0) {
-            int l1=(l+1)/2;
-            ListNode current =head;
-            while (current!=null) {
-                System.out.println(current.data);
+            int l1=(l/2)+1;
+            int k=1;
+            ListNode current1 =head;
+            while (current1!=null) {
+                if (k==l1) {
+                    System.out.println(current1.data+" is at middle");
+                }
+
+                k++;
+                current1=current1.next;
+                
             }
             
-        }
-        else{
-             int l1=(l/2)+1;
-             ListNode current =head;
-             while (current!=null) {
-                if (current==l1) {
-                    System.out.println(current.data);
+        }else{
+
+            int l1=(l+1)/2;
+            int k=1;
+            ListNode current2 =head;
+            while (current2!=null) {
+                if (k==l1) {
+                    System.out.println(current2.data+" is at middle ");
+
                 }
+                k++;
+                current2=current2.next;
             }
         }
-        
     }
     
     
