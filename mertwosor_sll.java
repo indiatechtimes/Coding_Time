@@ -110,12 +110,12 @@ public class mertwosor_sll {//this algorithm merge two sorted sll
         mertwosor_sll s=new mertwosor_sll();
         s.lino1();
         s.display();
-        s.lino2();
-        s.display();
-
-        mertwosor_sll result=new mertwosor_sll();
-        result.head=merge(lino1.head, lino2.head);
-        result.display();
+        mertwosor_sll t=new mertwosor_sll();
+        t.lino2();
+        t.display();
+        mertwosor_sll res=new mertwosor_sll();
+        res.head=merge(s.head,t.head);
+        res.display();
         
     }
     
