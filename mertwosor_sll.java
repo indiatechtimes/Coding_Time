@@ -1,7 +1,7 @@
 public class mertwosor_sll {//this algorithm merge two sorted sll
     private ListNode head;
-    private mertwosor_sll.ListNode lino1;
-    private mertwosor_sll.ListNode lino2;
+    
+    
     private static class ListNode {
         private int data;
         private ListNode next;
