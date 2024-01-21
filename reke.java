@@ -39,8 +39,7 @@ public class reke {// this Algorithm is for remove the given key (element ) from
             tem=cu;
             cu=cu.next;
         }
-        tem.next=cu.next;
-        return remove;
+        
         
 
     }
