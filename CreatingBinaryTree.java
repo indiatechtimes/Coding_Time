@@ -31,6 +31,7 @@ public class CreatingBinaryTree {
     }
 
     public static void main(String[] args) {
-        
+        CreatingBinaryTree cbt=new CreatingBinaryTree();
+        cbt.CreatBTree();
     }
 }
