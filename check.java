@@ -1,45 +1,73 @@
-class removeEven {
-    public void remEven(){
-            
-            int[] myarray=new int[10];
-            myarray[0]=1;
-            myarray[1]=2;
-            myarray[2]=3;
-            myarray[3]=4;
-            myarray[4]=5;
-            myarray[5]=6;
-            myarray[6]=7;
-            myarray[7]=8;
-            myarray[8]=9;
-            myarray[9]=10;
+public class postorder_Rec_BT {
 
-            int x= myarray.length;
-            System.out.println("length of array " +x);
-            System.out.println("below the items of array");
-            
-            for(int i=0;i<x;i++){
-                int a= myarray[i];
-                System.out.print(" "+a);
+    
+    private TreeNode root;
+    
+    private class TreeNode{
+        
+        private TreeNode left;
+        private TreeNode right;
+        private int data;
+        
+        private TreeNode(int data){
+            this.data=data;
+        }
+    }
 
-            }
-            System.out.println(" ");
-            System.out.println("below the items of array after removing even Integers");
-            for(int j=0;j<x;j++){
-                int b=myarray[j];
-                if (b%2==0) {
-                    System.out.print(" ");
-                    
-                }
-                else{
-                    System.out.print(b);
-                }
-            }
+
+
+    public void CreateBTree(){
+        TreeNode fir=new TreeNode(1);
+        TreeNode sec=new TreeNode(2);
+        TreeNode thi=new TreeNode(3);
+        TreeNode fou=new TreeNode(4);
+        TreeNode fiv=new TreeNode(5);
+        TreeNode six=new TreeNode(6);
+        
+
+        root=fir;
+        fir.left=sec;
+        fir.right=thi;
+
+
+        sec.left=fou;
+        sec.right=fiv;
+        thi.left=six;
+
+
+    } 
+
+
+    public void postorder(TreeNode root){
+        if (root==null) {
+            return;
+        }
+        postorder(root.left);
+        postorder(root.right);
+        System.out.print(root.data+" ");
+        
+        
+ 
+    }
+
+    public int treeLenght(TreeNode root){
+        if (root==null) {
+            return 0;
+
+        }
+        int lenL=treeLenght(root.left);
+        int lenR=treeLenght(root.right);
+        return 1+lenL+lenR;
+    }
+
+
+ 
+    public static void main(String[] args) {
+        postorder_Rec_BT pr=new postorder_Rec_BT();
+        pr.CreateBTree();
+        pr.postorder(pr.root);
+        System.out.println("length of tree is: "+pr.treeLenght(pr.root));
+
         
     }
-
-    public static void main (String args[]){
-        removeEven fin=new removeEven();
-        fin.remEven(); 
-    }
-    
 }

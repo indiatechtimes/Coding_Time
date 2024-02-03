@@ -1,10 +1,14 @@
-public class postorder_Rec_BT {
+public class check2 {
+
     
     private TreeNode root;
+    
     private class TreeNode{
+        
         private TreeNode left;
         private TreeNode right;
         private int data;
+        
         private TreeNode(int data){
             this.data=data;
         }
@@ -18,6 +22,7 @@ public class postorder_Rec_BT {
         TreeNode thi=new TreeNode(3);
         TreeNode fou=new TreeNode(4);
         TreeNode fiv=new TreeNode(5);
+        TreeNode six=new TreeNode(6);
         
 
         root=fir;
@@ -27,6 +32,7 @@ public class postorder_Rec_BT {
 
         sec.left=fou;
         sec.right=fiv;
+        thi.left=six;
 
 
     } 
@@ -39,14 +45,40 @@ public class postorder_Rec_BT {
         postorder(root.left);
         postorder(root.right);
         System.out.print(root.data+" ");
+        
+        
+ 
+    }
 
+    public int treeLenght(TreeNode root){
+        if (root==null) {
+            return 0;
+
+        }
+        int lenL=treeLenght(root.left);
+        int lenR=treeLenght(root.right);
+        return 1+lenL+lenR;
+
+    }
+
+    public void che(){
+        if (treeLenght(root)>0) {
+            System.out.println("positive");
+        }else{
+            System.out.println("negative");
+        }
     }
 
 
  
     public static void main(String[] args) {
-        postorder_Rec_BT pr=new postorder_Rec_BT();
+        check2 pr=new check2();
         pr.CreateBTree();
         pr.postorder(pr.root);
+        System.out.println("length of tree is: "+pr.treeLenght(pr.root));
+        pr.che();
+
+        
     }
 }
+
