@@ -3,12 +3,13 @@ import java.util.*;
  * Add_x_no
  */
 public class Add_x_no {
+    
     int sum;
 
     public void add(){//  making function 
         
 
-        System.out.println("enter how many number you want to add");
+        System.out.println("enter how many numbers you want to add");
         Scanner sc=new Scanner(System.in);
         int a=sc.nextInt();
         int[] myarray =new int [a];//making array 
